@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Pure Web Components</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .cards__container {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div id='btnContainer'>
+        <custom-button label='Initial Label' backgroundcolor='lightblue'></custom-button>
+    </div>
+
+    <section class='cards__container'>
+        <card-item
+            header='Test'
+            description='If you click my button I will change my background color.'
+            button-label='Click me!'
+            button-bgcolor='lightgreen'
+        ></card-item>
+        <card-item
+            id='cardOne'
+            header='Card 1'
+            description='If you click my button I will change my background color.'
+            button-label='Click me!'
+            button-bgcolor='lightgreen'
+        >
+            <img src='img/turtle.jpg' alt='Turtle picture' width='100%'>
+            <a href='https://www.freepik.com/free-photos-vectors/nature'>Nature photo created by frimufilms - www.freepik.com</a>
+        </card-item>
+        <card-item
+            id='cardCounter'
+            header='Card 2'
+            description='If you click my button my number will change.'
+            button-label='Click me!'
+            button-bgcolor='lavender'
+        >
+            <span id='counter'>1</span>
+        </card-item>
+    </section>
+
+    <script src='CustomButton.js'></script>
+    <script src='CardItem.js'></script>
+    <script>
+        const cardOne = document.querySelector('#cardOne');
+        cardOne.onClick = () => {
+            cardOne.backgroundColor = getRandomColor();
+        }
+
+        const cardCounter = document.querySelector('#cardCounter');
+        cardCounter.onClick = () => {
+            const counterSpan = cardCounter.querySelector('#counter');
+            const count = +counterSpan.innerText;
+            counterSpan.innerText = count + 1;
+        }
+
+        const element = document.querySelector('custom-button');
+        setTimeout(() => {
+            element.label = 'Click Me';
+            element.backgroundColor = getRandomColor();
+        }, 4000);
+
+        const btn = document.createElement('custom-button');
+        btn.setAttribute('label', 'hey');
+        btn.setAttribute('backgroundcolor', 'lightpink');
+        btn.addEventListener('click', () => {
+            console.log('heeeeeey')
+        })
+        document.querySelector('#btnContainer').append(btn);
+
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
