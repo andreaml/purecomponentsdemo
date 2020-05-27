@@ -10,7 +10,7 @@ This is a demo from the given talk in the GDLJS community. (25/05/2020)
 - [Web Components III] - by Robin Wieruch
 - [Shadow DOM] - by MDN Web Docs
 
-[Talk Slides]: https://docs.google.com/presentation/d/1KC9qs74AHgk_TGkTQrSJqslVTTgjq2KFASMuApHXQ1M/edit?usp=sharing
+[Talk Slides here]: https://docs.google.com/presentation/d/1KC9qs74AHgk_TGkTQrSJqslVTTgjq2KFASMuApHXQ1M/edit?usp=sharing
 [Web Components I]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
 [Web Componnets II]: https://developers.google.com/web/fundamentals/web-components
 [Web Components III]: https://www.robinwieruch.de/web-components-tutorial
